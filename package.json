@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "generate": "ts-node ./index.ts"
+  },
+  "devDependencies": {
+    "@homebound/truss": "1.14.0",
+    "ts-node": "^8.10.2"
+  }
+}
