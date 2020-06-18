@@ -1,7 +1,7 @@
 ## truss
 
-This directory uses truss to generate the `src/Css.ts` utility class DSL.
+This directory uses [Truss](https://github.com/homebound-team/truss) to generate the `src/Css.ts` utility class DSL.
 
-See `index.ts` for customizing HOP-specific fonts/colors/etc.
+See `index.ts` for customizing application-specific fonts/colors/etc.
 
-To update `src/Css.ts`, after changing `index.ts`, run `npm run generate` in this `truss` subdirectory.
+To update `src/Css.ts`, after changing `index.ts`, in this `truss` subdirectory run `npm run generate`.
