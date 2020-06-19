@@ -1,5 +1,4 @@
 export const palette = {
-  // Functional
   Black: "#353535",
   MidGray: "#888888",
   LightGray: "#cecece",
