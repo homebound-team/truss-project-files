@@ -35,6 +35,7 @@ generate({
   increment,
   aliases,
   breakpoints,
+  palette,
 }).then(
   () => console.log("done"),
   (err) => console.error(err),
