@@ -1,4 +1,4 @@
-import { generate, generateRules, makeRule } from "@homebound/truss";
+import { generate, newMethod, Aliases } from "@homebound/truss";
 import { palette } from "./palette";
 
 // The increment setting means that abbreviations like `mt1` will be `marginTop: 6px`.
@@ -15,14 +15,13 @@ const fonts = {
   f24: "24px",
 };
 
-// This creates the default/out-of-the-box method/rule set.
-const methods = generateRules({ palette, fonts, numberOfIncrements });
-
 // You can add/remove your own application-specific/one-off rules as needed.
-methods["custom-stuff"] = [makeRule("foo", { color: "#000000" })];
+const sections = {
+  customStuff: () => [newMethod("foo", { color: "#000000" })],
+}
 
 // You can also define common application-specific combinations as aliases.
-const aliases: Record<string, string[]> = {
+const aliases: Aliases = {
   bodyText: ["f14", "black"],
 };
 
@@ -31,11 +30,13 @@ const breakpoints = { sm: 0, md: 600, lg: 960 };
 
 generate({
   outputPath: "../src/Css.ts",
-  methods,
+  palette,
+  fonts,
   increment,
+  numberOfIncrements,
   aliases,
   breakpoints,
-  palette,
+  sections,
 }).then(
   () => console.log("done"),
   (err) => console.error(err),
